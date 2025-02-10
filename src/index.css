@@ -1,0 +1,110 @@
+@import url("https://use.typekit.net/bir7aaq.css");
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #ffffff;
+    --color-secondary: #21ffdd;
+    --color-dark: #1e1e1e;
+  }
+  .font-aileron-regular {
+    font-family: "Aileron", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .font-aileron-italic {
+    font-family: "Aileron", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Aileron", sans-serif;
+}
+
+::selection {
+  background-color: var(--color-secondary);
+  color: black;
+}
+
+/* ============================
+      Scrollbar Styling
+      ============================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(44, 44, 44, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@layer utilities {
+  @media (min-width: 320px) {
+    .xs\:text-xs {
+      font-size: 0.75rem;
+    }
+  }
+  @media (min-width: 896px) {
+    .md2\:text-lg {
+      font-size: 1.125rem;
+    }
+  }
+  @media (min-width: 1152px) {
+    .lg2\:text-xl {
+      font-size: 1.25rem;
+    }
+  }
+  @media (min-width: 1792px) {
+    .xl3\:text-2xl {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 2048px) {
+    .xl4\:text-3xl {
+      font-size: 1.875rem;
+    }
+  }
+  .gradient-bg {
+    background: linear-gradient(
+      to bottom,
+      var(--color-dark) 0%,
+      #141414 33%,
+      #0f0f0f 70%,
+      #080808 100%
+    );
+  }
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .text-dark {
+    color: var(--color-dark);
+  }
+}
