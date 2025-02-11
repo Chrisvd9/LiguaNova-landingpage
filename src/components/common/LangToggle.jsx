@@ -6,7 +6,7 @@ const LanguageToggle = () => {
 
   return (
     <div
-      className="cursor-pointer text-base font-bold flex items-center justify-center"
+      className="cursor-pointer text-base font-bold flex items-center"
       onClick={() => setIsSpanish(!isSpanish)}
     >
       <AnimatePresence mode="wait">

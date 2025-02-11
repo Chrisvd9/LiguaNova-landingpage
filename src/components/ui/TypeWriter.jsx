@@ -21,7 +21,7 @@ export function Typewriter({ delay = 0.5, baseText = "" }) {
   }, [count, baseText.length, delay]);
 
   return (
-    <span className="font-aileron-italic">
+    <span className="font-aileron-italic text-secondary">
       <motion.span>{displayText}</motion.span>
       <BlinkingCursor animationComplete={animationComplete} />
     </span>

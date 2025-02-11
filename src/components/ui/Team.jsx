@@ -19,7 +19,7 @@ export const AnimatedTeam = ({ team, autoplay = true }) => {
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 2500);
+      const interval = setInterval(handleNext, 8000);
       return () => clearInterval(interval);
     }
   }, [autoplay]);
@@ -47,9 +47,7 @@ export const AnimatedTeam = ({ team, autoplay = true }) => {
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : randomRotateY(),
-                    zIndex: isActive(index)
-                      ? 999
-                      : team.length + 2 - index,
+                    zIndex: isActive(index) ? 999 : team.length + 2 - index,
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
                   exit={{
@@ -129,20 +127,22 @@ export const AnimatedTeam = ({ team, autoplay = true }) => {
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
-            <button
-              onClick={handlePrev}
-              className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-            >
-              <BsArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-            >
-              <BsArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
-            </button>
-          </div>
+          {!autoplay && (
+            <div className="flex gap-4 pt-12 md:pt-0 z-10">
+              <button
+                onClick={handlePrev}
+                className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+              >
+                <BsArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+              >
+                <BsArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
