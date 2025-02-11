@@ -3,10 +3,9 @@ import { Link } from "wouter";
 import LanguageToggle from "../common/LangToggle";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/works", label: "Works" },
-  { href: "/contact", label: "Contact" },
-  { href: "/quote", label: "Get a Quote" },
+  { href: "/", label: "Inicio" },
+  { href: "/works", label: "Trabajos" },
+  { href: "/quote", label: "Obtener una Cotización" },
 ];
 
 export const Sidebar = ({ isOpen, onClose }) => {

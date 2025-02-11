@@ -1,15 +1,15 @@
 import { Route, Switch, useLocation } from "wouter";
+import { lazy, Suspense } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Layout from "./layouts/Layout";
-import HeroSection from "./pages/HeroSection";
-import About from "./pages/About";
-import Works from "./pages/Works";
-import Quote from "./pages/Quote";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import { Toaster } from "sonner";
 import ScrollToTop from "./hooks/ScrollToTop";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+
+const HeroSection = lazy(() => import("./pages/HeroSection"));
+const About = lazy(() => import("./pages/About"));
+const Works = lazy(() => import("./pages/Works"));
+const Quote = lazy(() => import("./pages/Quote"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -21,16 +21,16 @@ const App = () => {
   const [location] = useLocation();
 
   return (
-    <HelmetProvider>
-      <Helmet>
+    <>
+      <>
         <title>LiguaNova | Digital Design & Marketing</title>
         <meta
           name="description"
-          content="We create visually stunning and functional design solutions to help brands grow."
+          content="Creamos soluciones de diseño visualmente impactantes y funcionales para ayudar a las marcas a crecer."
         />
         <meta
           name="keywords"
-          content="web design, marketing, UI/UX, branding, SEO"
+          content="diseño web, marketing, UI/UX, branding, SEO"
         />
         <meta
           property="og:title"
@@ -38,12 +38,12 @@ const App = () => {
         />
         <meta
           property="og:description"
-          content="Boost your brand with expert web design and marketing strategies."
+          content="Impulsa tu marca con estrategias de diseño web y marketing profesional."
         />
         <meta property="og:image" content="/logos/logo-02-white.svg" />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
-      </Helmet>
+      </>
 
       <Layout>
         <ScrollToTop />
@@ -55,20 +55,23 @@ const App = () => {
             exit="exit"
             variants={pageVariants}
           >
-            <Switch location={location}>
-              <Route path="/" component={HeroSection} />
-              <Route path="/about" component={About} />
-              <Route path="/works/:category/:page" component={Works} />
-              <Route path="/works" component={Works} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/quote" component={Quote} />
-              <Route component={NotFound} />
-            </Switch>
+            <Suspense
+              fallback={<div className="text-center p-10">Cargando...</div>}
+            >
+              <Switch location={location}>
+                <Route path="/" component={HeroSection} />
+                <Route path="/about" component={About} />
+                <Route path="/works/:category/:page" component={Works} />
+                <Route path="/works" component={Works} />
+                <Route path="/quote" component={Quote} />
+                <Route component={NotFound} />
+              </Switch>
+            </Suspense>
           </motion.div>
         </AnimatePresence>
         <Toaster closeButton position="top-center" />
       </Layout>
-    </HelmetProvider>
+    </>
   );
 };
 

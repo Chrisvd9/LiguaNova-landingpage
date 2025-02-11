@@ -4,41 +4,42 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqData = [
   {
-    question: "¿Cuál es tu stack tecnológico y por qué lo usas?",
-    answer: `Trabajo con Vite + React, Astro, TailwindCSS, Motion y Zustand, asegurando que cada web sea rápida, escalable y segura. 
-      Uso tecnologías modernas para optimizar el rendimiento y la experiencia de usuario.`,
+    question: "¿Qué tecnologías utilizamos para el desarrollo web?",
+    answer: `Trabajamos con tecnologías modernas como React, Astro, TailwindCSS y Vite, garantizando sitios web rápidos, 
+      optimizados para SEO y con una experiencia de usuario fluida.`,
   },
   {
-    question: "¿Ofreces desarrollo en WordPress?",
-    answer: `No, ya que WordPress es menos seguro y limita la personalización. Prefiero crear código desde cero 
-      para asegurar una web optimizada, segura y única para cada cliente.`,
+    question: "¿Por qué no usamos WordPress?",
+    answer: `Evitamos WordPress porque puede ser menos seguro, menos escalable y más limitado en personalización. 
+      Desarrollamos sitios desde cero para optimizar velocidad, seguridad y flexibilidad según las necesidades del cliente.`,
   },
   {
-    question: "¿Brindas soporte después de entregar el proyecto?",
-    answer: `Sí, pero tiene un costo adicional. Ofrezco mantenimiento para correcciones, optimización y seguridad 
-      para mantener tu web actualizada y funcionando sin problemas.`,
+    question: "¿Qué incluye el soporte después de entregar el proyecto?",
+    answer: `Ofrecemos distintos planes de soporte según las necesidades del cliente, desde pequeños ajustes hasta cambios 
+      ilimitados por un periodo determinado. Esto garantiza que tu sitio web esté siempre actualizado y seguro.`,
   },
   {
-    question: "¿Ayudas con la gestión del hosting y servidores?",
-    answer: `Sí, puedo gestionar hosting en AWS, Vercel, Netlify, Cloudflare y DigitalOcean. Como AWS Solution Architect, 
-      puedo ayudarte a implementar una infraestructura escalable y segura.`,
+    question: "¿Ayudan con la compra de dominio y configuración de hosting?",
+    answer: `Sí, asesoramos en la compra de dominios y configuramos el hosting en plataformas como AWS, Vercel, Cloudflare y DigitalOcean. 
+      Nos aseguramos de que tu sitio esté bien configurado y optimizado.`,
   },
   {
-    question: "¿Qué tan seguras son las páginas que desarrollas?",
-    answer: `Estudio ciberseguridad y tengo certificaciones que respaldan mis conocimientos. Implemento medidas 
-      como prevención de ataques XSS, CSRF e inyecciones SQL, garantizando máxima seguridad.`,
+    question: "¿Cómo aseguramos la seguridad de tu sitio web?",
+    answer: `Contamos con experiencia en ciberseguridad, implementando medidas como protección contra ataques XSS, CSRF y SQL Injection, 
+      además de reforzar la seguridad en servidores y conexiones.`,
   },
   {
-    question: "¿Cómo funciona el pago y qué garantías ofreces?",
-    answer: `Para iniciar, se paga el 50% y el otro 50% al finalizar el proyecto. Garantizo código limpio, SEO optimizado, 
-      diseño responsive y seguridad reforzada.`,
+    question: "¿Cómo es el proceso de pago?",
+    answer: `Se realiza un pago inicial del 50% y el resto al finalizar el proyecto. Garantizamos código limpio, un diseño optimizado, 
+      SEO avanzado y una web segura y escalable.`,
   },
   {
-    question: "¿Ofreces servicios de marketing y diseño gráfico?",
-    answer: `Sí, pero con un costo adicional. Trabajo con expertos en branding y marketing digital para ofrecer estrategias 
-      efectivas y diseños profesionales.`,
+    question: "¿Ofrecen servicios adicionales como marketing y diseño gráfico?",
+    answer: `Sí, contamos con packs completos que incluyen branding, diseño gráfico y estrategias de marketing digital para potenciar 
+      tu presencia online y aumentar tus ventas.`,
   },
 ];
+
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -54,7 +55,7 @@ const FAQ = () => {
         {faqData.map((item, index) => (
           <div key={index} className="border-t border-[#2c2c2c]">
             <button
-              className="w-full flex justify-between items-center py-4 text-sm lg:text-lg font-medium focus:outline-none cursor-pointer"
+              className="w-full flex justify-between items-center py-4 text-xs lg:text-lg font-medium focus:outline-none cursor-pointer"
               onClick={() => toggleFAQ(index)}
             >
               {item.question}

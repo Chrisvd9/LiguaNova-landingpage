@@ -28,11 +28,11 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label className="sr-only" htmlFor="name">
-              {"NAME"}
+              {"NOMBRE"}
             </label>
             <input
               className="w-full border-2 border-dark rounded-3xl p-3 text-sm focus:outline-none"
-              placeholder={"NAME"}
+              placeholder={"NOMBRE"}
               type="text"
               id="name"
               name="name"
@@ -55,12 +55,12 @@ const ContactForm = () => {
 
         <div>
           <label className="sr-only" htmlFor="message">
-            {"MESSAGE"}
+            {"MENSAJE"}
           </label>
 
           <textarea
             className="w-full border-2 border-dark rounded-3xl p-3 text-sm focus:outline-none"
-            placeholder={"MESSAGE"}
+            placeholder={"MENSAJE"}
             rows="8"
             id="message"
             name="message"
@@ -69,7 +69,7 @@ const ContactForm = () => {
 
         <div className="mt-4 w-full">
           <button type="submit" className="w-full">
-            <ConfettiButton>SEND MESSAGE</ConfettiButton>
+            <ConfettiButton>ENVIAR MENSAJE</ConfettiButton>
           </button>
         </div>
       </form>

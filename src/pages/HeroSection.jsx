@@ -1,9 +1,6 @@
-import { Helmet } from "react-helmet-async";
+import { lazy, Suspense } from "react";
 import { Typewriter } from "../components/ui/TypeWriter";
 import { VelocityScroll } from "../components/ui/VelocitySroll";
-import Card from "../components/common/Card";
-import FAQ from "../components/common/FAQ";
-import ContactForm from "../components/common/ContactForm";
 import { ShootingStars } from "../components/ui/ShootingStars";
 import { StarsBackground } from "../components/ui/StarsBackground";
 import { InteractiveHoverButton } from "../components/ui/InteractiveHoverButton";
@@ -12,10 +9,14 @@ import { SparklesText } from "../components/ui/Sparkles";
 import { AnimatedTeam } from "../components/ui/Team";
 import { MarqueeDemo } from "../components/common/Testimonials";
 
+const Card = lazy(() => import("../components/common/Card"));
+const FAQ = lazy(() => import("../components/common/FAQ"));
+const ContactForm = lazy(() => import("../components/common/ContactForm"));
+
 const team = [
   {
     description:
-      "I'm a frontend developer, UI/UX designer, and cybersecurity specialist with a passion for creating visually stunning and functional solutions that communicate effectively.",
+      "Soy desarrollador frontend, diseñador UI/UX y especialista en ciberseguridad, apasionado por crear soluciones visualmente impactantes y funcionales.",
     name: "Christian Vergara",
     designation:
       "Frontend Developer, UI/UX Designer & Cybersecurity Specialist",
@@ -23,51 +24,89 @@ const team = [
   },
   {
     description:
-      "I'm a graphic designer with a passion for creating visually stunning and functional solutions that communicate effectively.",
+      "Soy diseñadora gráfica y disfruto crear identidades visuales que comuniquen la esencia de cada marca de manera efectiva.",
     name: "Johis Tapia",
     designation: "Graphic Designer",
     src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     description:
-      "I'm a digital marketing specialist with a passion for creating visually stunning and functional solutions that communicate effectively.",
+      "Soy especialista en marketing digital, creando estrategias que posicionan marcas y aumentan la conversión de clientes.",
     name: "Sebastian Tapia",
     designation: "Digital Marketing Specialist",
     src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
+const jobs = [
+  {
+    title: "Academia de Ciberseguridad Landing Page",
+    link: "",
+    image: "/portfolio/academiaciber.webp",
+    category: "React",
+    description:
+      "Creamos una landing page optimizada para la Academia de Ciberseguridad, con diseño atractivo y estructura enfocada en la conversión.",
+    year: "2025",
+  },
+  {
+    title: "BlackFreshRecords Landing Page",
+    link: "https://www.blackfreshrecord.com/",
+    image: "/portfolio/blackfreshrecord.webp",
+    category: "Astro",
+    description:
+      "Desarrollamos una web moderna para BlackFreshRecords, destacando la identidad de la marca con una navegación fluida.",
+    year: "2025",
+  },
+  {
+    title: "DATA-STRATEGY Landing Page",
+    link: "https://www.data-strategy.ai/",
+    image: "/portfolio/data-strategy-hero.webp",
+    category: "Astro",
+    description:
+      "Diseñamos una plataforma escalable para DATA-STRATEGY, asegurando una interfaz intuitiva y una experiencia óptima.",
+    year: "2024",
+  },
+  {
+    title: "GrowCloud Landing Page",
+    link: "https://growcloud.cl/",
+    image: "/portfolio/gc-hero.webp",
+    category: "React",
+    description:
+      "Desarrollamos la web de GrowCloud con animaciones avanzadas y una estructura optimizada para SEO y velocidad.",
+    year: "2023",
+  },
+];
+
 const HeroSection = () => {
   return (
     <>
-      <Helmet>
-        <title>Welcome to LiguaNova | Digital Design & Marketing</title>
+      <>
+        <title>Bienvenido a LiguaNova | Diseño Digital & Marketing</title>
         <meta
           name="description"
-          content="We create visually stunning and functional design solutions to help brands grow. Explore our work and get in touch!"
+          content="Creamos soluciones de diseño visualmente impactantes y funcionales para impulsar marcas. Descubre nuestros servicios y proyectos."
         />
         <meta
           name="keywords"
-          content="design, marketing, web development, branding, UI/UX, SEO"
+          content="diseño, marketing, desarrollo web, branding, UI/UX, SEO"
         />
         <meta
           property="og:title"
-          content="LiguaNova | Digital Design & Marketing"
+          content="LiguaNova | Diseño Digital & Marketing"
         />
         <meta
           property="og:description"
-          content="Boost your brand with our expert team in web design, marketing, and cybersecurity."
+          content="Destaca con nuestro equipo experto en diseño web, marketing y branding. Transformamos ideas en experiencias digitales efectivas."
         />
         <meta property="og:image" content="/logos/logo-02-white.svg" />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
-      </Helmet>
+      </>
 
       <section className="px-4 max-w-7xl mx-auto grid place-items-center gap-8 lg:gap-0 lg:flex lg:justify-between w-full mt-36">
         <div>
           <h1 className="text-white text-center lg:text-start text-5xl md:text-7xl lg:text-8xl font-medium leading-tight">
-            HI, WE <br />
-            ARE
+            HOLA, SOMOS
             <br />
             <Typewriter baseText="LiguaNova" delay={0.5} />
           </h1>
@@ -76,8 +115,9 @@ const HeroSection = () => {
         <div className="flex flex-col items-center">
           <img
             src="/logos/logo-02-white.svg"
-            alt="LiguaNova Logo"
+            alt="Logo de LiguaNova"
             className="relative -inset-x-10 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]"
+            loading="lazy"
           />
         </div>
       </section>
@@ -89,50 +129,63 @@ const HeroSection = () => {
       <section className="px-4 mt-32 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 lg:grid-rows-3 gap-4">
           <div>
-            <h1 className="text-6xl">Selected Work.</h1>
+            <h1 className="text-4xl lg:text-6xl uppercase">
+              Trabajo Seleccionado.
+            </h1>
             <p className="text-gray-300 mt-4 text-lg">
-              Take a look at some of my featured projects where I combine modern
-              web technologies with creative design solutions to build engaging
-              user experiences.
+              Explora algunos de nuestros proyectos destacados, donde combinamos
+              tecnologías modernas con diseño creativo para ofrecer experiencias
+              impactantes.
             </p>
           </div>
-          <div className="lg:row-span-2 lg:col-start-1 lg:row-start-2">
-            <Card />
-          </div>
-          <div className="lg:row-span-3 lg:col-start-2 lg:row-start-1">
-            <Card />
-          </div>
+
+          {jobs.slice(0, 1).map((job) => (
+            <Suspense fallback={<div>Cargando...</div>} key={job.title}>
+              <div className="lg:row-span-2 lg:col-start-1 lg:row-start-2">
+                <Card {...job} />
+              </div>
+            </Suspense>
+          ))}
+
+          {jobs.slice(1, 2).map((job) => (
+            <Suspense fallback={<div>Cargando...</div>} key={job.title}>
+              <div className="lg:row-span-3 lg:col-start-2 lg:row-start-1">
+                <Card {...job} />
+              </div>
+            </Suspense>
+          ))}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-4 mt-4">
-          <div>
-            <Card />
-          </div>
-          <div>
-            <Card />
-          </div>
+          {jobs.slice(2, 4).map((job) => (
+            <Suspense fallback={<div>Cargando...</div>} key={job.title}>
+              <div>
+                <Card {...job} />
+              </div>
+            </Suspense>
+          ))}
         </div>
 
         <div className="flex justify-center mt-8">
-          <Link to="/about">
-            <InteractiveHoverButton>See More</InteractiveHoverButton>
+          <Link to="/works">
+            <InteractiveHoverButton>Ver más</InteractiveHoverButton>
           </Link>
         </div>
       </section>
 
       <section className="px-4 mt-32 max-w-7xl mx-auto">
-        <h2 className="text-5xl lg:text-6xl mb-6">Our Team</h2>
+        <h2 className="text-5xl lg:text-6xl mb-6 uppercase">Nuestro Equipo</h2>
         <p className="text-3xl lg:text-4xl mb-6 max-w-2xl text-gray-300">
-          We are passionate about creating visually stunning and functional
-          solutions that communicate effectively.
+          Creemos en el poder del diseño y la estrategia digital para
+          transformar negocios.
         </p>
         <AnimatedTeam team={team} />
       </section>
 
       <section className="px-4 mt-32 max-w-7xl mx-auto">
-        <h2 className="text-5xl lg:text-6xl mb-6">Testimonials</h2>
+        <h2 className="text-5xl lg:text-6xl mb-6">Testimonios</h2>
         <p className="text-3xl lg:text-4xl mb-6 max-w-2xl text-gray-300">
-          What our clients say about us.
+          Lo que nuestros clientes dicen sobre nosotros.
         </p>
         <MarqueeDemo />
       </section>
@@ -143,7 +196,7 @@ const HeroSection = () => {
         <div className="max-w-7xl mx-auto grid place-items-center gap-8 lg:gap-0 lg:flex lg:justify-between lg:items-center w-full">
           <div>
             <h2 className="font-bold text-5xl lg:text-7xl leading-tight">
-              <SparklesText text="LET'S WORK TOGETHER" />
+              <SparklesText text="TRABAJEMOS JUNTOS" />
             </h2>
           </div>
           <ContactForm />

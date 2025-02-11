@@ -6,10 +6,9 @@ import { MdMenu } from "react-icons/md";
 import LanguageToggle from "../common/LangToggle";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/works", label: "Works" },
-  { href: "/contact", label: "Contact" },
-  { href: "/quote", label: "Get a Quote" },
+  { href: "/", label: "Inicio" },
+  { href: "/works", label: "Trabajos" },
+  { href: "/quote", label: "Solicitar Presupuesto" },
 ];
 
 const Header = () => {
@@ -38,7 +37,7 @@ const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <Link to="/">
-            <img src="/logos/monologo-02.svg" alt="icon" className="size-8" />
+            <img src="/logos/monologo-02.svg" alt="icono" className="size-8" />
           </Link>
 
           <nav className="hidden z-50 md:flex items-center gap-6 uppercase">
@@ -51,7 +50,6 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <LanguageToggle />
           </nav>
 
           <button

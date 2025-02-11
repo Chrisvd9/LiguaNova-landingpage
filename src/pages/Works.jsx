@@ -1,86 +1,71 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeroParallax } from "../components/ui/HeroParallax";
 import { Link, useLocation } from "wouter";
 import { PlaceholdersAndVanishInput } from "../components/ui/SearchAnimation";
+import PortfolioCard from "../components/common/PortfolioCard";
 
 const categories = ["All", "React", "Astro", "Next.js"];
-const itemsPerPage = 6;
+const itemsPerPage = 3;
 
 const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    title: "Academia de Ciberseguridad Landing Page",
+    link: "",
+    thumbnail: "/portfolio/academiaciber.webp",
     category: "React",
+    description:
+      "Desarrollamos y diseñamos una landing page moderna y optimizada para la Academia de Ciberseguridad, enfocándonos en una experiencia de usuario fluida y una interfaz visualmente atractiva.",
+    skills: ["React", "Vite", "Tailwind"],
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    title: "BlackFreshRecords Landing Page",
+    link: "https://www.blackfreshrecord.com/",
+    thumbnail: "/portfolio/blackfreshrecord.webp",
     category: "Astro",
+    description:
+      "Creamos una landing page innovadora para BlackFreshRecords, con un diseño envolvente y underground que mejora la identidad de la marca en el mundo digital.",
+    skills: ["Astro", "JS", "Tailwind"],
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-    category: "Next.js",
+    title: "DATA-STRATEGY Landing Page",
+    link: "https://www.data-strategy.ai/",
+    thumbnail: "/portfolio/data-strategy-hero.webp",
+    category: "Astro",
+    description:
+      "Diseñamos y desarrollamos la plataforma web para DATA-STRATEGY, asegurando una navegación eficiente y una estética profesional alineada con la visión de la empresa.",
+    skills: ["Astro", "Tailwind", "Motion"],
   },
   {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "GrowCloud Landing Page",
+    link: "https://growcloud.cl/",
+    thumbnail: "/portfolio/gc-hero.webp",
     category: "React",
+    description:
+      "Creamos la landing page de GrowCloud utilizando React y Tailwind, integrando animaciones avanzadas con GSAP y AOS para ofrecer una experiencia interactiva y envolvente.",
+    skills: ["React", "Gsap", "Tailwind"],
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-    category: "Astro",
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-    category: "Next.js",
-  },
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    title: "Lizilib Landing Page",
+    link: "https://www.lizilib.com/",
+    thumbnail: "/portfolio/landing-lizilib-hero.webp",
     category: "React",
+    description:
+      "Diseñamos y desarrollamos la landing page de Lizilib, optimizando su interfaz y experiencia de usuario con un enfoque moderno y atractivo.",
+    skills: ["React", "Tailwind", "AOS"],
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-    category: "Astro",
-  },
-  {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-    category: "Next.js",
+    title: "Educational Landing Page",
+    link: "https://landing-n2.vercel.app/",
+    thumbnail: "/portfolio/landing-n2-hero.webp",
+    category: "React",
+    description:
+      "Creamos una landing page educativa interactiva, combinando React con Tailwind y animaciones de Framer Motion para brindar una experiencia visual atractiva.",
+    skills: ["React", "Motion", "Tailwind"],
   },
 ];
 
-const placeholders = [
-  "Search Moonbeam",
-  "Search Cursor",
-  "Search Rogue",
-  "Search Editorially",
-  "Search Tailwind Master Kit",
-];
+const placeholders = ["DATA-STRATEGY", "Lizilib", "Educational", "GrowCloud"];
 
 const Works = () => {
   const [location, setLocation] = useLocation();
@@ -121,33 +106,10 @@ const Works = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Our Work | LiguaNova</title>
-        <meta
-          name="description"
-          content="Explore our featured projects where we combine modern web technologies with creative design solutions to build engaging user experiences."
-        />
-        <meta
-          name="keywords"
-          content="web development, design, branding, UI/UX, marketing"
-        />
-        <meta property="og:title" content="Our Work | LiguaNova" />
-        <meta
-          property="og:description"
-          content="Check out our top projects in React, Astro, and Next.js."
-        />
-        <meta
-          property="og:image"
-          content="https://aceternity.com/images/products/thumbnails/new/moonbeam.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="robots" content="index, follow" />
-      </Helmet>
-
       <HeroParallax products={products} />
 
       <section className="max-w-7xl mx-auto px-4">
-        <h1 className="text-5xl font-bold mb-8">Our Work</h1>
+        <h1 className="text-5xl font-bold mb-8">Nuestros trabajos</h1>
 
         <div className="grid gap-4 lg:flex lg:justify-between w-full">
           <div className="grid grid-cols-2 gap-4 lg:flex space-x-4 mb-6 bg-dark px-4 py-4 lg:py-2 rounded-3xl w-full">
@@ -181,28 +143,20 @@ const Works = () => {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
           >
-            {displayedProducts.map((product, index) => (
-              <a
-                href={product.link}
-                key={index}
-                className="group rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="relative aspect-video">
-                  <img
-                    src={product.thumbnail}
-                    alt={`${product.title} preview`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold group-hover:text-[#21ffdd] transition-all duration-500">
-                    {product.title}
-                  </h3>
-                </div>
-              </a>
-            ))}
+            {!displayedProducts.length ? (
+              <h2 className="text-2xl text-gray-300">No results found</h2>
+            ) : (
+              displayedProducts.map((product, index) => (
+                <PortfolioCard
+                  key={index}
+                  title={product.title}
+                  description={product.description}
+                  live={product.link}
+                  image={product.thumbnail}
+                  skills={product.skills}
+                />
+              ))
+            )}
           </motion.div>
         </AnimatePresence>
 
@@ -211,7 +165,7 @@ const Works = () => {
             <Link href={`/works/${currentCategory.toLowerCase()}/${page - 1}`}>
               <button
                 aria-label="Previous Page"
-                className="px-4 py-2 rounded-xl bg-gray-300 text-gray-800 hover:bg-[#21ffdd]"
+                className="px-4 py-2 rounded-xl bg-gray-300 cursor-pointer transition-all duration-500 text-gray-800 hover:bg-[#21ffdd]"
               >
                 {"<"}
               </button>
@@ -227,7 +181,7 @@ const Works = () => {
                 className={`px-4 py-2 rounded-xl ${
                   page === index + 1
                     ? "bg-secondary text-dark"
-                    : "bg-gray-300 text-gray-800 hover:bg-[#21ffdd]"
+                    : "bg-gray-300 cursor-pointer transition-all duration-500 text-gray-800 hover:bg-[#21ffdd]"
                 }`}
               >
                 {index + 1}
@@ -238,7 +192,7 @@ const Works = () => {
             <Link href={`/works/${currentCategory.toLowerCase()}/${page + 1}`}>
               <button
                 aria-label="Next Page"
-                className="px-4 py-2 rounded-xl bg-gray-300 text-gray-800 hover:bg-[#21ffdd]"
+                className="px-4 py-2 rounded-xl bg-gray-300 cursor-pointer transition-all duration-500 text-gray-800 hover:bg-[#21ffdd]"
               >
                 {">"}
               </button>
