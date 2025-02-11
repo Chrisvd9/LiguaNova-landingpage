@@ -3,5 +3,14 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: "/",
   plugins: [react(), tailwindcss()],
+  build: {
+    minify: "esbuild",
+    sourcemap: false,
+  },
+
+  optimizeDeps: {
+    include: ["react-router-dom", "framer-motion"],
+  },
 });
