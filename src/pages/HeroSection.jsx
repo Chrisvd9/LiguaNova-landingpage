@@ -19,22 +19,22 @@ const team = [
   {
     description:
       "Soy desarrollador frontend, diseñador UI/UX y especialista en ciberseguridad, apasionado por crear soluciones visualmente impactantes y funcionales.",
-    name: "Christian Vergara",
+    name: "Christian",
     designation:
       "Frontend Developer, UI/UX Designer & Cybersecurity Specialist",
-    src: "/assets/hero/me.webp",
+    src: "https://ui.aceternity.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1636041293178-808a6762ab39%3Fq%3D80%26w%3D3464%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=640&q=75",
   },
   {
     description:
       "Soy diseñadora gráfica y disfruto crear identidades visuales que comuniquen la esencia de cada marca de manera efectiva.",
-    name: "Johis Tapia",
+    name: "Johis",
     designation: "Graphic Designer",
     src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     description:
       "Soy especialista en marketing digital, creando estrategias que posicionan marcas y aumentan la conversión de clientes.",
-    name: "Sebastian Tapia",
+    name: "Sebastian",
     designation: "Digital Marketing Specialist",
     src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
