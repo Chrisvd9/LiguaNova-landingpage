@@ -19,6 +19,11 @@ const faqData = [
       ilimitados por un periodo determinado. Esto garantiza que tu sitio web esté siempre actualizado y seguro.`,
   },
   {
+    question: "¿Por qué es más caro un desarrollo web a medida?",
+    answer: `Un desarrollo web a medida es más caro porque se adapta a las necesidades específicas de cada cliente, 
+      garantizando un diseño único, optimizado y seguro. Además, ofrecemos soporte y mantenimiento continuo.`,
+  },
+  {
     question: "¿Ayudan con la compra de dominio y configuración de hosting?",
     answer: `Sí, asesoramos en la compra de dominios y configuramos el hosting en plataformas como AWS, Vercel, Cloudflare y DigitalOcean. 
       Nos aseguramos de que tu sitio esté bien configurado y optimizado.`,
@@ -39,7 +44,6 @@ const faqData = [
       tu presencia online y aumentar tus ventas.`,
   },
 ];
-
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);

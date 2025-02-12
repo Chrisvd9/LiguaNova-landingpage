@@ -1,6 +1,19 @@
 @import url("https://use.typekit.net/bir7aaq.css");
 @import "tailwindcss";
 
+@theme {
+  --keyframes-pulse: {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 var(--pulse-color);
+    }
+    50% {
+      box-shadow: 0 0 0 8px var(--pulse-color);
+    }
+  }
+  --animation-pulse: pulse var(--duration) ease-out infinite;
+}
+
 @layer base {
   :root {
     --color-primary: #ffffff;
@@ -133,4 +146,17 @@ html {
   to {
     transform: translateY(calc(-100% - var(--gap)));
   }
+}
+
+.circle {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.letter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-family: "Rubik Mono One", sans-serif;
+  color: var(--color-secondary);
 }

@@ -8,6 +8,8 @@ import { Link } from "wouter";
 import { SparklesText } from "../components/ui/Sparkles";
 import { AnimatedTeam } from "../components/ui/Team";
 import { MarqueeDemo } from "../components/common/Testimonials";
+import { Lamp } from "../components/ui/Lamp";
+import PulsatingButton from "../components/ui/PulsatingButton";
 
 const Card = lazy(() => import("../components/common/Card"));
 const FAQ = lazy(() => import("../components/common/FAQ"));
@@ -110,6 +112,10 @@ const HeroSection = () => {
             <br />
             <Typewriter baseText="LiguaNova" delay={0.5} />
           </h1>
+
+          <PulsatingButton pulseColor="#00bdff" duration="2s" href="#contact">
+            Comenzar ahora
+          </PulsatingButton>
         </div>
 
         <div className="flex flex-col items-center">
@@ -192,7 +198,23 @@ const HeroSection = () => {
 
       <FAQ />
 
-      <section className="px-4 mt-32 bg-secondary text-dark py-20">
+      <section className="mt-32 max-w-7xl mx-auto rounded-3xl px-4">
+        <div className="h-[40rem] w-full rounded-3xl flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
+          <Lamp />
+          <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+              ¿Quieres una página <br /> como esta?
+            </h1>
+            <p className="text-2xl lg:text-3xl mb-6 max-w-2xl text-gray-300 text-center mt-4 mx-auto">
+              Contáctanos y hablemos sobre tu proyecto. Estamos aquí para
+              ayudarte. No importa si es un pequeño negocio o una gran empresa,
+              tenemos la solución perfecta para ti. No esperes más!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="px-4 mt-32 bg-secondary text-dark py-20">
         <div className="max-w-7xl mx-auto grid place-items-center gap-8 lg:gap-0 lg:flex lg:justify-between lg:items-center w-full">
           <div>
             <h2 className="font-bold text-5xl lg:text-7xl leading-tight">

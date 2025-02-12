@@ -1,66 +1,83 @@
-import React, { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeroParallax } from "../components/ui/HeroParallax";
 import { Link, useLocation } from "wouter";
 import { PlaceholdersAndVanishInput } from "../components/ui/SearchAnimation";
-import PortfolioCard from "../components/common/PortfolioCard";
+
+const PortfolioCard = lazy(() => import("../components/common/PortfolioCard"));
 
 const categories = ["All", "React", "Astro", "Next.js"];
 const itemsPerPage = 3;
 
 const products = [
   {
+    id: 1,
     title: "Academia de Ciberseguridad Landing Page",
     link: "",
     thumbnail: "/portfolio/academiaciber.webp",
     category: "React",
     description:
-      "Desarrollamos y diseñamos una landing page moderna y optimizada para la Academia de Ciberseguridad, enfocándonos en una experiencia de usuario fluida y una interfaz visualmente atractiva.",
+      "Desarrollamos una landing page moderna y optimizada para la Academia de Ciberseguridad, con un diseño atractivo y experiencia de usuario intuitiva.",
     skills: ["React", "Vite", "Tailwind"],
   },
   {
+    id: 2,
     title: "BlackFreshRecords Landing Page",
     link: "https://www.blackfreshrecord.com/",
     thumbnail: "/portfolio/blackfreshrecord.webp",
     category: "Astro",
     description:
-      "Creamos una landing page innovadora para BlackFreshRecords, con un diseño envolvente y underground que mejora la identidad de la marca en el mundo digital.",
+      "Creamos una landing page innovadora para BlackFreshRecords, con una identidad visual impactante y navegación optimizada.",
     skills: ["Astro", "JS", "Tailwind"],
   },
   {
+    id: 3,
     title: "DATA-STRATEGY Landing Page",
     link: "https://www.data-strategy.ai/",
     thumbnail: "/portfolio/data-strategy-hero.webp",
     category: "Astro",
     description:
-      "Diseñamos y desarrollamos la plataforma web para DATA-STRATEGY, asegurando una navegación eficiente y una estética profesional alineada con la visión de la empresa.",
+      "Diseñamos la plataforma web para DATA-STRATEGY, garantizando una experiencia fluida y alineada con su visión digital.",
     skills: ["Astro", "Tailwind", "Motion"],
   },
   {
+    id: 4,
+    title: "Izied Landing Page",
+    link: "https://www.izied.com/",
+    thumbnail: "/portfolio/Izied.webp",
+    category: "React",
+    description:
+      "Migramos Izied de wordpress a una página web moderna y optimizada, asegurando un diseño atractivo, funcional y rápido. Quitando el peso de wordpress y mejorando la experiencia de usuario.",
+    skills: ["React", "Aos", "Tailwind"],
+  },
+  {
+    id: 5,
     title: "GrowCloud Landing Page",
     link: "https://growcloud.cl/",
     thumbnail: "/portfolio/gc-hero.webp",
     category: "React",
     description:
-      "Creamos la landing page de GrowCloud utilizando React y Tailwind, integrando animaciones avanzadas con GSAP y AOS para ofrecer una experiencia interactiva y envolvente.",
+      "Desarrollamos la landing page de GrowCloud con animaciones avanzadas en GSAP y AOS, asegurando interactividad y optimización SEO.",
     skills: ["React", "Gsap", "Tailwind"],
   },
   {
+    id: 6,
     title: "Lizilib Landing Page",
     link: "https://www.lizilib.com/",
     thumbnail: "/portfolio/landing-lizilib-hero.webp",
     category: "React",
     description:
-      "Diseñamos y desarrollamos la landing page de Lizilib, optimizando su interfaz y experiencia de usuario con un enfoque moderno y atractivo.",
+      "Creamos la web de Lizilib con un diseño moderno, estructura SEO optimizada y una experiencia de usuario intuitiva.",
     skills: ["React", "Tailwind", "AOS"],
   },
   {
+    id: 7,
     title: "Educational Landing Page",
     link: "https://landing-n2.vercel.app/",
     thumbnail: "/portfolio/landing-n2-hero.webp",
     category: "React",
     description:
-      "Creamos una landing page educativa interactiva, combinando React con Tailwind y animaciones de Framer Motion para brindar una experiencia visual atractiva.",
+      "Landing page educativa interactiva con animaciones de Framer Motion, asegurando una experiencia visual atractiva.",
     skills: ["React", "Motion", "Tailwind"],
   },
 ];
@@ -106,6 +123,26 @@ const Works = () => {
 
   return (
     <>
+      <>
+        <title>Nuestros Trabajos | LiguaNova</title>
+        <meta
+          name="description"
+          content="Explora nuestros proyectos de diseño web, branding y marketing digital. LiguaNova transforma ideas en experiencias digitales únicas."
+        />
+        <meta
+          name="keywords"
+          content="diseño web, desarrollo, marketing, branding, UI/UX, SEO"
+        />
+        <meta property="og:title" content="Nuestros Trabajos | LiguaNova" />
+        <meta
+          property="og:description"
+          content="Descubre cómo potenciamos marcas con soluciones digitales impactantes y efectivas."
+        />
+        <meta property="og:image" content="/logos/logo-02-white.svg" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
+      </>
+
       <HeroParallax products={products} />
 
       <section className="max-w-7xl mx-auto px-4">
@@ -144,18 +181,24 @@ const Works = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
           >
             {!displayedProducts.length ? (
-              <h2 className="text-2xl text-gray-300">No results found</h2>
+              <h2 className="text-2xl text-gray-300">
+                No se encontraron resultados
+              </h2>
             ) : (
-              displayedProducts.map((product, index) => (
-                <PortfolioCard
-                  key={index}
-                  title={product.title}
-                  description={product.description}
-                  live={product.link}
-                  image={product.thumbnail}
-                  skills={product.skills}
-                />
-              ))
+              displayedProducts.map(
+                ({ id, title, description, link, thumbnail, skills }) => (
+                  <Suspense fallback={<div>Cargando...</div>} key={title}>
+                    <PortfolioCard
+                      key={id}
+                      title={title}
+                      description={description}
+                      live={link}
+                      image={thumbnail}
+                      skills={skills}
+                    />{" "}
+                  </Suspense>
+                )
+              )
             )}
           </motion.div>
         </AnimatePresence>
@@ -164,7 +207,7 @@ const Works = () => {
           {page > 1 && (
             <Link href={`/works/${currentCategory.toLowerCase()}/${page - 1}`}>
               <button
-                aria-label="Previous Page"
+                aria-label="Página anterior"
                 className="px-4 py-2 rounded-xl bg-gray-300 cursor-pointer transition-all duration-500 text-gray-800 hover:bg-[#21ffdd]"
               >
                 {"<"}
@@ -177,7 +220,7 @@ const Works = () => {
               href={`/works/${currentCategory.toLowerCase()}/${index + 1}`}
             >
               <button
-                aria-label={`Page ${index + 1}`}
+                aria-label={`Página ${index + 1}`}
                 className={`px-4 py-2 rounded-xl ${
                   page === index + 1
                     ? "bg-secondary text-dark"
@@ -188,16 +231,6 @@ const Works = () => {
               </button>
             </Link>
           ))}
-          {page < totalPages && (
-            <Link href={`/works/${currentCategory.toLowerCase()}/${page + 1}`}>
-              <button
-                aria-label="Next Page"
-                className="px-4 py-2 rounded-xl bg-gray-300 cursor-pointer transition-all duration-500 text-gray-800 hover:bg-[#21ffdd]"
-              >
-                {">"}
-              </button>
-            </Link>
-          )}
         </div>
       </section>
     </>

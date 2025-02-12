@@ -92,8 +92,8 @@ export const Header = () => {
         TODO NUESTRO TRABAJO
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        Estos son algunos de los proyectos en los que hemos trabajado. Hemos tenido la
-        suerte de trabajar con personas y empresas increíbles.
+        Estos son algunos de los proyectos en los que hemos trabajado. Hemos
+        tenido la suerte de trabajar con personas y empresas increíbles.
       </p>
     </div>
   );
@@ -117,6 +117,7 @@ export const ProductCard = ({ product, translate }) => {
       >
         <img
           src={product.thumbnail}
+          loading="lazy"
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0 rounded-3xl"

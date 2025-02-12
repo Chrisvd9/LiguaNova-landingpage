@@ -4,10 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Layout from "./layouts/Layout";
 import { Toaster } from "sonner";
 import ScrollToTop from "./hooks/ScrollToTop";
+import Loader from "./components/ui/LoaderAnimation";
 
 const HeroSection = lazy(() => import("./pages/HeroSection"));
 const About = lazy(() => import("./pages/About"));
 const Works = lazy(() => import("./pages/Works"));
+const Services = lazy(() => import("./pages/Services"));
 const Quote = lazy(() => import("./pages/Quote"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -55,14 +57,13 @@ const App = () => {
             exit="exit"
             variants={pageVariants}
           >
-            <Suspense
-              fallback={<div className="text-center p-10">Cargando...</div>}
-            >
+            <Suspense fallback={<Loader />}>
               <Switch location={location}>
                 <Route path="/" component={HeroSection} />
                 <Route path="/about" component={About} />
                 <Route path="/works/:category/:page" component={Works} />
                 <Route path="/works" component={Works} />
+                <Route path="/services" component={Services} />
                 <Route path="/quote" component={Quote} />
                 <Route component={NotFound} />
               </Switch>

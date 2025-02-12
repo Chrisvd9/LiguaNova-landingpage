@@ -3,11 +3,11 @@ import { Link } from "wouter";
 import { Sidebar } from "./Sidebar";
 import { motion } from "framer-motion";
 import { MdMenu } from "react-icons/md";
-import LanguageToggle from "../common/LangToggle";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/works", label: "Trabajos" },
+  { href: "/services", label: "Servicios" },
   { href: "/quote", label: "Solicitar Presupuesto" },
 ];
 

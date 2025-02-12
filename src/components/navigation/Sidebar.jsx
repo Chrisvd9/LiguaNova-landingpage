@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import LanguageToggle from "../common/LangToggle";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/works", label: "Trabajos" },
-  { href: "/quote", label: "Obtener una Cotización" },
+  { href: "/services", label: "Servicios" },
+  { href: "/quote", label: "Solicitar Presupuesto" },
 ];
 
 export const Sidebar = ({ isOpen, onClose }) => {
@@ -40,7 +40,6 @@ export const Sidebar = ({ isOpen, onClose }) => {
               {link.label}
             </Link>
           ))}
-          <LanguageToggle />
         </nav>
       </motion.div>
     </motion.div>

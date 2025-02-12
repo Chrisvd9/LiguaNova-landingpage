@@ -11,6 +11,6 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: ["react-router-dom", "framer-motion"],
+    include: ["react-icons", "framer-motion", "wouter"],
   },
 });
