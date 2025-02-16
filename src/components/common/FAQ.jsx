@@ -38,11 +38,6 @@ const faqData = [
     answer: `Se realiza un pago inicial del 50% y el resto al finalizar el proyecto. Garantizamos código limpio, un diseño optimizado, 
       SEO avanzado y una web segura y escalable.`,
   },
-  {
-    question: "¿Ofrecen servicios adicionales como marketing y diseño gráfico?",
-    answer: `Sí, contamos con packs completos que incluyen branding, diseño gráfico y estrategias de marketing digital para potenciar 
-      tu presencia online y aumentar tus ventas.`,
-  },
 ];
 
 const FAQ = () => {

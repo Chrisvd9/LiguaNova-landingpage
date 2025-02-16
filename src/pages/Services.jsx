@@ -2,8 +2,6 @@ import React from "react";
 import { HoverEffect } from "../components/ui/CardHover";
 import {
   FaLaptopCode,
-  FaPalette,
-  FaBullhorn,
   FaServer,
   FaHeadset,
   FaBox,
@@ -17,7 +15,7 @@ const Services = () => {
       {
         title: "Pack Landing Page",
         description:
-          "Landing page con React/Astro + SEO y diseño gráfico (logo + paleta de colores) + ayuda con dominio y hosting.",
+          "Landing page optimizada con React/Astro + SEO básico + soporte para dominio y hosting.",
         icon: (
           <FaLaptopCode
             className="size-12"
@@ -27,102 +25,65 @@ const Services = () => {
         ),
       },
       {
-        title: "Pack Web Completa",
+        title: "Pack Web Empresarial",
         description:
-          "Sitio web con hasta 5 páginas + SEO avanzado y marketing básico + ayuda con dominio y hosting.",
+          "Sitio web profesional con hasta 5 páginas + SEO optimizado + integración con formularios y contacto.",
         icon: (
           <FaGlobe
             className="size-12"
             aria-hidden="true"
-            title="Desarrollo de sitios completos"
+            title="Desarrollo de sitios empresariales"
           />
         ),
       },
       {
-        title: "Pack Premium",
+        title: "Pack Web Avanzado",
         description:
-          "Sitio premium con SEO avanzado, branding y publicidad digital + ayuda con dominio y hosting.",
+          "Sitio web escalable con SEO avanzado + integración con APIs y bases de datos + optimización de rendimiento.",
         icon: (
           <FaBox
             className="size-12"
             aria-hidden="true"
-            title="Sitios premium con estrategias avanzadas"
+            title="Desarrollo web avanzado con optimización"
           />
         ),
       },
     ],
-    "Packs Exclusivos": [
-      {
-        title: "Pack Desarrollo Web",
-        description:
-          "Solo desarrollo web sin marketing ni diseño adicional. Opciones desde landing pages hasta sitios completos.",
-        icon: (
-          <FaLaptopCode
-            className="size-12"
-            aria-hidden="true"
-            title="Desarrollo web a medida"
-          />
-        ),
-      },
-      {
-        title: "Pack Diseño Gráfico",
-        description:
-          "Diseño de branding, logotipos, banners y material gráfico profesional para tu empresa o proyecto.",
-        icon: (
-          <FaPalette
-            className="size-12"
-            aria-hidden="true"
-            title="Diseño gráfico y branding"
-          />
-        ),
-      },
-      {
-        title: "Pack Marketing Digital",
-        description:
-          "SEO avanzado, gestión de redes sociales y estrategias de publicidad digital.",
-        icon: (
-          <FaBullhorn
-            className="size-12"
-            aria-hidden="true"
-            title="Marketing y optimización digital"
-          />
-        ),
-      },
-    ],
+
     "Servicios Adicionales": [
       {
-        title: "Hosting y Servidores",
+        title: "Hosting y Deploy",
         description:
-          "Alojamos tu sitio en servidores optimizados y seguros con Supabase, garantizando alta disponibilidad.",
+          "Alojamos y desplegamos tu sitio en servidores optimizados con opciones como Vercel, Onrender o AWS.",
         icon: (
           <FaServer
             className="size-12"
             aria-hidden="true"
-            title="Hosting y administración de servidores"
+            title="Hosting y despliegue web"
           />
         ),
       },
       {
-        title: "Consultoría en Digitalización",
+        title: "Integraciones y APIs",
         description:
-          "Ayudamos a empresas a mejorar su presencia digital, optimizar su marca y aumentar su conversión.",
+          "Conectamos tu sitio con APIs, bases de datos y herramientas externas para mayor funcionalidad.",
         icon: (
           <IoMdGlobe
             className="size-12"
             aria-hidden="true"
-            title="Estrategias de digitalización"
+            title="Integraciones y desarrollo de APIs"
           />
         ),
       },
       {
-        title: "Soporte y Mantenimiento",
+        title: "Soporte y Mantenimiento Web",
         description:
-          "Brindamos soporte técnico y mantenimiento continuo para actualizaciones y cambios en tu sitio web.",
+          "Actualizaciones, corrección de errores y mejoras continuas para mantener tu sitio siempre optimizado.",
         icon: (
           <FaHeadset
             className="size-12"
             aria-hidden="true"
-            title="Soporte y mantenimiento técnico"
+            title="Soporte y mantenimiento web"
           />
         ),
       },

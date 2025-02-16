@@ -13,7 +13,7 @@ const products = [
   {
     id: 1,
     title: "Academia de Ciberseguridad Landing Page",
-    link: "",
+    link: "https://academia-ciberseguridad.com/",
     thumbnail: "/portfolio/academiaciber.webp",
     category: "React",
     description:
@@ -63,7 +63,7 @@ const products = [
   {
     id: 6,
     title: "Lizilib Landing Page",
-    link: "https://www.lizilib.com/",
+    link: "",
     thumbnail: "/portfolio/landing-lizilib-hero.webp",
     category: "React",
     description:

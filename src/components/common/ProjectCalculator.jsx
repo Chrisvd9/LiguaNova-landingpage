@@ -4,85 +4,50 @@ import { GlowingEffect } from "../ui/GlowingEffect";
 import { motion } from "framer-motion";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
-import {
-  FaLaptopCode,
-  FaPaintBrush,
-  FaBullhorn,
-  FaTools,
-} from "react-icons/fa";
+import { FaDatabase, FaLaptopCode, FaRocket, FaTools } from "react-icons/fa";
 
 const services = [
   {
     id: 1,
     name: "Pack Landing Page",
-    price: 550,
+    price: 250,
     icon: <FaLaptopCode />,
-    desc: "Landing page con React o Astro + SEO y diseño gráfico (logo + paleta de colores) + Ayuda con dominio y hosting.",
+    desc: "Landing page optimizada con React o Astro + SEO básico + soporte para dominio y hosting.",
   },
   {
     id: 2,
-    name: "Pack Web Completa",
-    price: 800,
+    name: "Pack Web Empresarial",
+    price: 500,
     icon: <FaLaptopCode />,
-    desc: "Sitio web con hasta 5 páginas + SEO avanzado y marketing básico + Ayuda con dominio y hosting.",
+    desc: "Sitio web profesional con hasta 5 páginas + SEO optimizado + integración con formularios y contacto.",
   },
   {
     id: 3,
-    name: "Pack Premium",
-    price: 1500,
+    name: "Pack Web Avanzado",
+    price: 1000,
     icon: <FaLaptopCode />,
-    desc: "Sitio premium con SEO avanzado, branding y publicidad digital + Ayuda con dominio y hosting.",
+    desc: "Sitio web escalable con SEO avanzado + integración con APIs y bases de datos + optimización de rendimiento.",
   },
-
   {
     id: 4,
-    name: "Pack Desarrollo Web - Landing Page",
-    price: 250,
-    icon: <FaLaptopCode />,
-    desc: "Solo desarrollo web sin marketing ni diseño adicional.",
-  },
-  {
-    id: 5,
-    name: "Pack Diseño Gráfico",
-    price: 300,
-    icon: <FaPaintBrush />,
-    desc: "Logo + Branding profesional para tu negocio.",
-  },
-  {
-    id: 6,
-    name: "Pack Marketing Digital",
-    price: 400,
-    icon: <FaBullhorn />,
-    desc: "SEO avanzado y optimización web para aumentar tráfico.",
-  },
-  {
-    id: 6,
-    name: "Pack Marketing Digital RRSS",
-    price: 600,
-    icon: <FaBullhorn />,
-    desc: "Redes sociales y publicidad digital para aumentar ventas.",
-  },
-
-  {
-    id: 7,
     name: "Soporte Básico",
     price: 5,
     icon: <FaTools />,
-    desc: "1 cambio menor adicional",
+    desc: "1 cambio menor adicional.",
   },
   {
-    id: 8,
+    id: 5,
     name: "Soporte Plus",
-    price: 10,
+    price: 15,
     icon: <FaTools />,
-    desc: "3 cambios menores o 1 cambio mayor",
+    desc: "3 cambios menores o 1 cambio mayor.",
   },
   {
-    id: 9,
+    id: 6,
     name: "Soporte Full",
     price: 40,
     icon: <FaTools />,
-    desc: "Cambios ilimitados dentro de dos semanas",
+    desc: "Cambios ilimitados dentro de dos semanas.",
   },
 ];
 
@@ -170,15 +135,24 @@ const ProjectCalculator = () => {
       </div>
 
       <div
-        className={`fixed bottom-0 left-0 w-full bg-[#111] p-4 rounded-t-xl transition-all duration-300 lg:hidden ${
-          isExpanded ? "h-64" : "h-24"
+        className={`fixed bottom-0 left-0 w-full bg-[#111] p-4 rounded-t-3xl transition-all duration-300 lg:hidden z-50 ${
+          isExpanded ? "h-60" : "h-24"
         }`}
       >
         <div
           className="flex justify-between items-center cursor-pointer"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <h2 className="text-lg font-semibold">Resumen</h2>
+          <div>
+            <h2 className="text-lg font-semibold">Resumen </h2>
+            <p className="mt-2">
+              <span>Total:</span>
+              <AnimatedNumber
+                value={total}
+                format={(num) => `$${num.toLocaleString()}`}
+              />
+            </p>
+          </div>
           {isExpanded ? (
             <HiChevronUp className="size-4" />
           ) : (

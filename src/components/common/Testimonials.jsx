@@ -3,21 +3,21 @@ import { Marquee } from "../ui/Marquee";
 
 const reviews = [
   {
-    name: "Carlos M.",
-    username: "@carlos_m",
+    name: "Angél",
+    username: "@angel_a",
     body: "Contraté el Pack Landing Page y el resultado fue excelente. La web es rápida, moderna y optimizada para SEO. Además, me ayudaron a elegir el dominio y configurar el hosting sin problemas. 100% recomendado.",
     img: "https://avatar.vercel.sh/carlos",
   },
   {
-    name: "María G.",
-    username: "@mariag",
-    body: "Necesitaba un sitio web profesional con diseño atractivo y posicionamiento en Google. El Pack Web Completa superó mis expectativas. Ahora mi negocio tiene una presencia sólida en línea y recibimos más clientes gracias a la optimización SEO.",
+    name: "Ulises P.",
+    username: "@youngblack",
+    body: "Necesitaba un sitio web profesional con varias secciones e integración con formularios. Con el Pack Web Empresarial, ahora tengo una web optimizada, funcional y preparada para escalar mi negocio.",
     img: "https://avatar.vercel.sh/maria",
   },
   {
     name: "Javier R.",
     username: "@javierr",
-    body: "Si buscas una agencia que entienda la importancia del branding y el marketing digital, este es el lugar. Con el Pack Premium, obtuvimos una web increíble, estrategias de publicidad efectivas y una identidad de marca profesional.",
+    body: "El Pack Web Avanzado fue la mejor inversión para mi empresa. La integración con APIs y bases de datos nos permite automatizar procesos, y el rendimiento de la web es impresionante. Excelente servicio.",
     img: "https://avatar.vercel.sh/javier",
   },
   {
@@ -29,8 +29,14 @@ const reviews = [
   {
     name: "Ricardo T.",
     username: "@ricardot",
-    body: "El Pack Diseño Gráfico fue una gran elección para nuestra empresa. Nos ayudaron a crear un logo profesional y una identidad visual fuerte que ahora usamos en todo nuestro branding.",
+    body: "Contraté el servicio de Integración de APIs y bases de datos y fue un acierto total. Ahora mi plataforma se comunica sin problemas con herramientas externas y todo funciona de manera fluida.",
     img: "https://avatar.vercel.sh/ricardo",
+  },
+  {
+    name: "Sofía L.",
+    username: "@sofia_l",
+    body: "Nuestro sitio era lento y tenía problemas de carga. Con la Optimización Web logramos mejorar la velocidad y la experiencia de usuario. ¡Gran trabajo!",
+    img: "https://avatar.vercel.sh/sofia",
   },
 ];
 

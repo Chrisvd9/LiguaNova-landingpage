@@ -22,21 +22,19 @@ const team = [
     name: "Christian",
     designation:
       "Frontend Developer, UI/UX Designer & Cybersecurity Specialist",
-    src: "https://ui.aceternity.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1636041293178-808a6762ab39%3Fq%3D80%26w%3D3464%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=640&q=75",
+    src: "/assets/hero/me.webp",
   },
   {
-    description:
-      "Soy diseñadora gráfica y disfruto crear identidades visuales que comuniquen la esencia de cada marca de manera efectiva.",
-    name: "Johis",
-    designation: "Graphic Designer",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "PRÓXIMAMENTE ...",
+    name: "PRÓXIMAMENTE",
+    designation: "PRÓXIMAMENTE ...",
+    src: "./assets/hero/incognite.webp",
   },
   {
-    description:
-      "Soy especialista en marketing digital, creando estrategias que posicionan marcas y aumentan la conversión de clientes.",
-    name: "Sebastian",
-    designation: "Digital Marketing Specialist",
-    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "PRÓXIMAMENTE ...",
+    name: "PRÓXIMAMENTE",
+    designation: "PRÓXIMAMENTE ...",
+    src: "/assets/hero/incognite.webp",
   },
 ];
 
@@ -106,16 +104,18 @@ const HeroSection = () => {
       </>
 
       <section className="px-4 max-w-7xl mx-auto grid place-items-center gap-8 lg:gap-0 lg:flex lg:justify-between w-full mt-36">
-        <div>
+        <div className="flex flex-col justify-center items-center lg:items-start">
           <h1 className="text-white text-center lg:text-start text-5xl md:text-7xl lg:text-8xl font-medium leading-tight">
             HOLA, SOMOS
             <br />
             <Typewriter baseText="LiguaNova" delay={0.5} />
           </h1>
 
-          <PulsatingButton pulseColor="#00bdff" duration="2s" href="#contact">
-            Comenzar ahora
-          </PulsatingButton>
+          <div>
+            <PulsatingButton pulseColor="#00bdff" duration="2s" href="#contact">
+              Comenzar ahora
+            </PulsatingButton>
+          </div>
         </div>
 
         <div className="flex flex-col items-center">
@@ -182,8 +182,8 @@ const HeroSection = () => {
       <section className="px-4 mt-32 max-w-7xl mx-auto">
         <h2 className="text-5xl lg:text-6xl mb-6 uppercase">Nuestro Equipo</h2>
         <p className="text-3xl lg:text-4xl mb-6 max-w-2xl text-gray-300">
-          Creemos en el poder del diseño y la estrategia digital para
-          transformar negocios.
+          Creemos en el poder del desarrollo web y la estrategia digital para
+          impulsar marcas y hacer crecer negocios.
         </p>
         <AnimatedTeam team={team} />
       </section>
